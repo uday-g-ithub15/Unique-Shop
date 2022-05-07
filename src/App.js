@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Blogs from './Blogs/Blogs';
 import Home from './Home/Home';
+import InventoryItem from './Home/HomePageItems/HomePageItems';
 import Error from './Shared/Error/Error';
 import Footer from './Shared/Footer';
 import Header from './Shared/Header/Header';
@@ -13,6 +14,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/blogs' element={<Blogs/>}/>
+        <Route path='/inventory' element={<InventoryItem/>}/>
         <Route  path='*' element = {<Error/>}/>
       </Routes>
       <Footer/>
