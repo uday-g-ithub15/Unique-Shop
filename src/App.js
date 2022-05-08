@@ -3,6 +3,7 @@ import './App.css';
 import Blogs from './Blogs/Blogs';
 import Home from './Home/Home';
 import InventoryItem from './Home/HomePageItems/HomePageItems';
+import ItemDetails from './InventoryItemDetails/ItemDetails';
 import Login from './Login/Login';
 import Register from './Login/Register';
 import Error from './Shared/Error/Error';
@@ -16,11 +17,12 @@ function App() {
       <Header/>
       <Routes>
         <Route path='/' element={<Home/>}/>
-        <Route path='/blogs' element={
+        <Route path='/inventory/:itemId' element={
           <PrivateRoute>
-            <Blogs/>
+            <ItemDetails/>
           </PrivateRoute>
         }/>
+        <Route path='/blogs' element={<Blogs/>}/>
         <Route path='/login' element={<Login/>}/>
         <Route path='/register' element={<Register/>}/>
         <Route path='/inventory' element={<InventoryItem/>}/>
