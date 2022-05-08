@@ -2,13 +2,16 @@
     display: grid;
     grid-gap: 1rem;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    /* padding: 10px; */
+    padding: 10px;
     width: 80%;
     margin: auto;
+    background-color: #f2f2f4;
+    box-shadow: 0px 0px 7px gray;
 }
 .home-product{
     padding: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 255, 0.415);
+    background-color: #ffffff;
+    border-radius: 20px;
 }
 .home-product .img img{
     width: 100%;
@@ -17,6 +20,8 @@
 .home-product .information button{
   padding: 10px;
   border: none;
-  background-color: aliceblue;
+  background-color: #2C6AE5;
+  color: #fff;
   cursor: pointer;
+  border-radius: 10px;
 }
