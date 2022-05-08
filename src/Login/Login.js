@@ -1,6 +1,6 @@
 import React from 'react';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { Link } from 'react-router-dom';
+import { useAuthState, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../firebase.init';
 import Loading from '../Shared/Loading/Loading';
 import SocialLogin from '../Shared/SocialLogin/SocialLogin';
@@ -9,17 +9,25 @@ import './Login.css'
 const Login = () => {
     const [
         signInWithEmailAndPassword,
-        loading,
+        
       ] = useSignInWithEmailAndPassword(auth);
+      const[user,loading] = useAuthState(auth)
+      const navigate = useNavigate();
+      const location = useLocation();
+      const from = location.state?.from?.pathname || '/' ;
       const handleLogin =async (e) => {
           e.preventDefault()
           const email = e.target.email.value;
           const password = e.target.pass.value;
           await signInWithEmailAndPassword(email, password)
+        }
+          if(user){
+            navigate(from, {replace:true})
+          }
           if(loading){
               return <Loading/>
           }
-      }
+        
     return (
         <section className='login'>
             <div className='form'>

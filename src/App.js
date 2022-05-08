@@ -8,6 +8,7 @@ import Register from './Login/Register';
 import Error from './Shared/Error/Error';
 import Footer from './Shared/Footer';
 import Header from './Shared/Header/Header';
+import PrivateRoute from './Shared/PrivateRoute/PrivateRoute';
 
 function App() {
   return (
@@ -15,7 +16,11 @@ function App() {
       <Header/>
       <Routes>
         <Route path='/' element={<Home/>}/>
-        <Route path='/blogs' element={<Blogs/>}/>
+        <Route path='/blogs' element={
+          <PrivateRoute>
+            <Blogs/>
+          </PrivateRoute>
+        }/>
         <Route path='/login' element={<Login/>}/>
         <Route path='/register' element={<Register/>}/>
         <Route path='/inventory' element={<InventoryItem/>}/>
