@@ -17,6 +17,7 @@ const HomePageItem = ({product}) => {
                 <p>Description : {desc}</p>
                 <p>Supplier Name : {supplierName}</p>
                 <button onClick={() => navigate(`/inventory/${_id}`)}>Stock Update</button>
+                <button onClick={() => navigate(`/manageinventories`)}>Manage Inventories</button>
             </div>
         </div>
     );

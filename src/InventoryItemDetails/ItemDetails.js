@@ -76,6 +76,7 @@ if(newQuantity <= 1){
                 <p>Description : {desc}</p>
                 <p>Supplier Name : {supplierName}</p>
                 <button className = 'btn'  disabled={active} onClick={handleUpdateQuantity}>Deliverd</button>
+                <button className = 'btn' onClick={handleUpdateQuantity}>Manage Intevntories</button>
                 </div>
                 <div className='restock-form'>
                     <form onSubmit={handleAddProduct}>

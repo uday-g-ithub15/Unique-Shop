@@ -7,6 +7,7 @@
     margin: auto;
     background-color: #f2f2f4;
     box-shadow: 0px 0px 7px gray;
+    position: relative;
 }
 .home-product{
     padding: 10px;
@@ -24,4 +25,17 @@
   color: #fff;
   cursor: pointer;
   border-radius: 10px;
+}
+.home-products .add-item{
+    position: absolute;
+    left: -10%;
+
+}
+.home-products .add-item button{
+    padding: 10px;
+    border: none;
+    background-color: #2C6AE5;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 10px;
 }

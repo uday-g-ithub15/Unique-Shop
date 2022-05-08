@@ -33,7 +33,7 @@ const logout = () => {
             <div className='nav-content'>
             <NavLink style = {navLink} to={'/'}>Home</NavLink>
             <NavLink style = {navLink} to={'/about'}>About</NavLink>
-            <NavLink style = {navLink} to={'/'}>Home</NavLink>
+            <NavLink style = {navLink} to={'/inventory'}>Inventorys</NavLink>
             <NavLink style = {navLink} to={'/blogs'}>Blogs</NavLink>
             </div>
             <div className="time">

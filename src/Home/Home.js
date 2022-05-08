@@ -1,6 +1,7 @@
 import React from 'react';
 import Banner from './Banner';
-import InventoryItem from './HomePageItems/HomePageItems';
+import HomePageItems from './HomePageItems/HomePageItems';
+// import HomePageItems from './HomePageItems/HomePageItems';
 
 const Home = () => {
     const homeStyle = {
@@ -9,7 +10,7 @@ const Home = () => {
     return (
         <div style={homeStyle}>
           <Banner/>  
-         <InventoryItem/>
+         <HomePageItems/>
         </div>
     );
 };
