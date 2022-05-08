@@ -26,7 +26,7 @@
 .register .register-form input:focus{
     outline: none;
 }
-.register .register-form input[type='submit']{
+.register .register-form button{
     margin: auto;
     display: block;
     padding: 10px;
@@ -36,6 +36,17 @@
     background-color: #2C6AE5;
     color: #fff;
     cursor: pointer;
+}
+.register .register-form button:disabled{
+    margin: auto;
+    display: block;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    border: none;
+    background-color: #d0d5df;
+    color: rgba(36, 19, 19, 0.549);
+    cursor: not-allowed;
 }
 .register .register-form .terms {
     margin: 10px 0;

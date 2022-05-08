@@ -1,8 +1,13 @@
+import { signOut } from 'firebase/auth';
 import React, {  useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { NavLink } from 'react-router-dom';
+import auth from '../../firebase.init';
 import './Header.css'
 
 const Header = () => {
+  const [user] = useAuthState(auth)
+  // console.log(user);
   const [hour, setHour] = useState('')
   const [min, setMin] = useState('')
   const [sec, setSec] = useState('')
@@ -12,12 +17,6 @@ const Header = () => {
     setMin(new Date().getMinutes())
     setSec(new Date().getSeconds())
   },1000)
-
-  // setInterval(() => {
-  // },1000);
-
-  // setInterval(() => {
-  // },1000);
    
 const navLink = ({isActive}) => {
   return{
@@ -25,6 +24,9 @@ const navLink = ({isActive}) => {
     color:isActive ? '#fff' : ''
   }
 }
+const logout = () => {
+  signOut(auth);
+};
 
     return (
         <nav >
@@ -39,7 +41,8 @@ const navLink = ({isActive}) => {
              <h5>{date}</h5>
             </div>
             <div className="user">
-              <h4>Name</h4>
+              {user && <h4>Name:{user?.displayName || 'No Name'}</h4>}
+              {user && <><h3><button onClick={logout}>Logout</button></h3></>}
             </div>
         </nav>
     );
