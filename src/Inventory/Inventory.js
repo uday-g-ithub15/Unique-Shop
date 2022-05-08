@@ -2,7 +2,8 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../Home/HomePageItems/HomeProducts.css'
 
-const Inventory = ({product}) => {
+const Inventory = (props) => {
+    const {product, handleDelete} = props;
     const {productName, picture, desc, price, quantity, supplierName, productColor,_id} = product;
     const navigate = useNavigate();
     return (
@@ -18,6 +19,7 @@ const Inventory = ({product}) => {
             <p>Description : {desc}</p>
             <p>Supplier Name : {supplierName}</p>
             <button onClick={() => navigate(`/inventory/${_id}`)}>Stock Update</button>
+            <button style={{marginLeft:'5px'}} onClick={() => handleDelete(_id)}>Delete</button>
         </div>
     </div>
     );
