@@ -1,0 +1,57 @@
+.item-details{
+    width: 50%;
+    margin: 90px auto 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px #e0d7d7;
+    padding: 10px;
+    position: relative;
+}
+.item-details .img img{
+    width: 100%;
+}
+.item-details .information{
+    width: 90%;
+    margin: auto;
+    word-wrap: break-word;
+}
+.item-details .btn{
+    padding: 10px;
+    border: none;
+    background-color: #2C6AE5;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: all 0.2s;
+}
+.item-details .btn:hover{
+    background-color: #B31217;
+    color: #fff;
+}
+.item-details .information button:disabled{
+    background-color: #d0d5df;
+    color: rgba(36, 19, 19, 0.549);
+    cursor: not-allowed;
+}
+.item-details .restock-form{
+    background-color: rgb(226, 235, 232);
+    position: absolute;
+    left: 100%;
+    padding: 10px;
+    border-radius: 10px;
+}
+.item-details .restock-form input{
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(222, 184, 135,0.77);
+}
+.item-details .restock-form input:focus{
+    outline: none;
+}

@@ -1,17 +1,19 @@
 import { Route, Routes } from 'react-router-dom';
-import AddItem from './AddItem/AddItem';
 import './App.css';
-import Blogs from './Blogs/Blogs';
-import Home from './Home/Home';
-import Inventorys from './Inventory/Inventorys';
-// import InventoryItem from './Home/HomePageItems/HomePageItems';
-import ItemDetails from './InventoryItemDetails/ItemDetails';
-import Login from './Login/Login';
-import Register from './Login/Register';
-import Error from './Shared/Error/Error';
-import Footer from './Shared/Footer';
-import Header from './Shared/Header/Header';
-import PrivateRoute from './Shared/PrivateRoute/PrivateRoute';
+import Blogs from './Pages/Blogs/Blogs';
+import Home from './Pages/Home/Home'
+import Inventorys from './Pages/Inventory/Inventorys';
+import ItemDetails from './Pages/InventoryItemDetails/ItemDetails';
+import Login from './Pages/Login/Login';
+import Register from './Pages/Login/Register';
+import MyItems from './Pages/MyItem/MyItems';
+import Error from './Pages/Shared/Error/Error';
+import Footer from './Pages/Shared/Footer/Footer';
+import Header from './Pages/Shared/Header/Header'
+import PrivateRoute from './Pages/Shared/PrivateRoute/PrivateRoute';
+import AddItem from './Pages/AddItem/AddItem';
+import Dashboard from './Pages/Home/Dashboard/Dashboard';
+import HomePageItems from './Pages/Home/HomePageItems/HomePageItems';
 
 function App() {
   return (
@@ -19,16 +21,24 @@ function App() {
       <Header/>
       <Routes>
         <Route path='/' element={<Home/>}/>
-        <Route path='/inventory' element={<Inventorys/>}/>
+        <Route path='/home' element={<Home/>}/>
+        <Route path='/home/#dashboard' element={<Dashboard/>}/>
+        <Route path='/home/#sampleproducts' element={<HomePageItems/>}/>
+        <Route path='/manageinventories' element={<Inventorys/>}/>
         <Route path='/inventory/:itemId' element={
           <PrivateRoute>
             <ItemDetails/>
-          </PrivateRoute>
+           </PrivateRoute>
         }/>
         <Route path='/additem' element={
-          // <PrivateRoute>
+          <PrivateRoute>
             <AddItem/>
-          // </PrivateRoute>
+          </PrivateRoute>
+        }/>
+        <Route path='/myitem' element={
+          <PrivateRoute>
+            <MyItems/>
+          </PrivateRoute>
         }/>
         <Route path='/blogs' element={<Blogs/>}/>
         <Route path='/login' element={<Login/>}/>

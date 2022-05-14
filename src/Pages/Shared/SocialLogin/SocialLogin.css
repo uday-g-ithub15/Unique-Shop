@@ -1,0 +1,23 @@
+.social-login{
+    margin: 10px 0px;
+}
+.social-login p{
+    display: flex;
+    justify-content: space-around;
+    align-items: center ;
+    border: 1px solid #3578E7;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.social-login p button{
+    border: none;
+    background-color: #3578E7;
+    color: snow;
+    padding: 10px;
+    cursor: pointer;
+}
+.social-login p span .google-icon{
+    font-size: 25px;
+    padding: 4px;
+
+}

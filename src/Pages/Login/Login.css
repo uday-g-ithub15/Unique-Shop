@@ -1,0 +1,47 @@
+.login{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    margin: 90px auto 138px;
+    background-color: #ffffff;
+    border-radius: 10px;
+}
+.login .form{
+    width: 100%;
+}
+.login .form input:not([type='submit']){
+    margin: auto;
+    display: block;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    width: 50%;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(222, 184, 135,0.77);
+}
+.login .form input:focus{
+    outline: none;
+}
+.login .form input[type='submit']{
+    margin: auto;
+    display: block;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    border: none;
+    background-color: #2C6AE5;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.login .form input[type='submit']:hover{
+    background-color: #B31217;
+    color: #fff;
+}
+.login a{
+    text-decoration: none;
+    color: #4c3aba;;
+}

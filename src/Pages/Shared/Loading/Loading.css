@@ -1,0 +1,21 @@
+.loading{
+    position: fixed;
+    top: 50%;
+    left: calc(50% - 50px);
+    border: 5px solid #540bf34a;
+    border-top: 5px solid #5e5ea0;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    animation: spinner 2s linear infinite;;
+}
+
+@keyframes spinner {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+    
+}

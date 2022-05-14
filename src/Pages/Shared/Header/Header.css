@@ -1,0 +1,117 @@
+nav{
+    position: fixed;
+    height: 4rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: #4c3aba;
+    z-index: 1;
+    top: 0px;
+    width: 100%;
+    margin-bottom: 10px; 
+    background-color: #ffffff;
+}
+nav .nav-content{
+    display: flex;    
+}
+
+nav  a{
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+    margin-right: 10px;
+    color: #4c3aba;
+    font-weight: 600;
+}
+nav a:hover{
+    text-decoration: underline;
+}
+nav button{
+    padding: 10px;
+    border: none;
+    background-color: #2C6AE5;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 10px;
+    display: block;
+}
+nav  .user{
+    display: flex;
+    align-items: center;;
+}
+nav .user .user-details{
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+nav .user .user-details .user-img {
+    margin-right: 15px;
+}
+nav .user .user-details .user-img img{
+    width:50px ;
+    border-radius: 30px;
+    cursor: pointer;
+}
+nav .user .user-details .user-info{
+    position: absolute;
+    background-color: #a2e2f4;
+    border-radius:5px ;
+    left: -30px;
+    width: 150px;
+    padding: 10px;
+    z-index: 1;
+    text-align: center;
+}
+nav .user .user-details .show{
+    top: 60px;
+    transition: all 0.4s linear;
+}
+nav .user .user-details .hide{
+    top: -300px;
+    transition: all 0.4s linear;
+}
+
+header .res-icon{
+    display: none;
+}
+@media screen and (max-width:992px) {
+    header .res-icon{
+        display: block;
+        position: fixed;
+        z-index: 1;
+        font-size: 20px;
+        top: 5px;
+        left: 5px;
+    }
+    nav {
+        position: fixed;
+        height: auto;
+        display: flex;
+        flex-direction: column-reverse;
+        color: #4c3aba;
+        width: auto; 
+        background-color: #ffffff;
+        left: 30px;
+        padding: 10px;
+
+    }
+    nav .nav-content{
+        flex-direction: column;
+        margin-top: 10px;
+    }
+    nav  .user{
+        display: flex;
+        flex-direction: column-reverse;
+        margin-bottom: 10px;
+    }
+    header .navshow{
+        top: 0px;
+        transition: all 0.2s;
+    }
+    header .navhide{
+        top: -600px;
+        transition: all 0.4s;
+    }
+    
+}

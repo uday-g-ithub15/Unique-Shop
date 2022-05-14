@@ -1,18 +1,16 @@
 import  { useEffect, useState } from 'react';
 
-const useProducts = () => {
+const useProducts = (url) => {
     const [products, setProducts] = useState([]);
+    const [loading, setLoading] = useState(false)
 useEffect(() => {
-    // const loadData =  () =>{
-        const url = 'http://localhost:5000/warehouseproducts'
-    //     const res = await fetch(url);
-    //     const data = await res.json();
-    //     setProducts(data);
-    // }
-    // loadData();
-    fetch(url).then(res => res.json()).then(data => setProducts(data))
-},[])
-    return [products, setProducts] ;
+    setLoading(true)
+    fetch(url).then(res => res.json()).then(data => {
+        setProducts(data)
+        setLoading(false)
+    })
+},[url])
+    return {products, setProducts, loading} ;
 };
 
 export default useProducts;

@@ -1,0 +1,30 @@
+.blogs{
+    width: 80%;
+    margin:auto;
+    margin-top: 100px;
+    padding: 10px;
+}
+.blogs table,th,td{
+    border: solid;
+    border-collapse: collapse;
+    border-color: #4c3aba;
+}
+.blogs table{
+    margin: auto;
+    margin-bottom: 15px;
+}
+.blogs td,th{
+    padding: 10px;
+}
+.blogs tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+
+  @media screen and (max-width:992px) {
+    .blogs{
+        width: 80%;
+        margin:auto;
+        padding: 10px;
+    }
+      
+  }
