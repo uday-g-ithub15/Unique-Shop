@@ -3,7 +3,7 @@ import useProducts from '../../../hooks/useProducts';
 import './Dashboard.css'
 
 const Dashboard = () => {
-    const {products} = useProducts(`http://lit-harbor-73222.herokuapp.com/warehouseproducts`)
+    const {products} = useProducts(`https://lit-harbor-73222.herokuapp.com/warehouseproducts`)
     let sum = 0 ;
     let totalSoldPrice = 1 ;
     for(const product of products){

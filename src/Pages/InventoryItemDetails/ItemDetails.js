@@ -9,7 +9,7 @@ const ItemDetails = () => {
     const navigate = useNavigate()
     useEffect(() => {
         const loadProduct = async() => {
-            const url = `http://lit-harbor-73222.herokuapp.com/warehouseproducts/${itemId}`
+            const url = `https://lit-harbor-73222.herokuapp.com/warehouseproducts/${itemId}`
         const res = await fetch(url)
         const data = await res.json();
         setProduct(data)
@@ -44,7 +44,7 @@ const ItemDetails = () => {
     const handleUpdateQuantity = () => {
         setNewQuantity(newQuantity - 1)
         setNewSold(newSold + 1)
-            fetch(`http://lit-harbor-73222.herokuapp.com/warehouseproducts/${itemId}`,{
+            fetch(`https://lit-harbor-73222.herokuapp.com/warehouseproducts/${itemId}`,{
                 method:"PUT",
                 headers : {
                     'content-type':'application/json'

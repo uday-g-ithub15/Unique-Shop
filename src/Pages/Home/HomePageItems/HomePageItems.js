@@ -5,7 +5,7 @@ import Loading from '../../Shared/Loading/Loading';
 import HomePageItem from './HomePageItem';
 import './HomeProducts.css'
 const HomePageItems = () => {
-    const{products, loading} = useProducts(`http://lit-harbor-73222.herokuapp.com/warehouseproducts`);
+    const{products, loading} = useProducts(`https://lit-harbor-73222.herokuapp.com/warehouseproducts`);
     const homeInventory = products.slice(0,6)
     const navigate = useNavigate()
     if(loading){

@@ -20,7 +20,7 @@ const AddItem = () => {
         const desc = e.target.desc.value;
         const sold = 1 ;
         const product = {userName, email, productName, productColor, price, quantity, picture, supplierName,desc, sold}
-        fetch(`http://lit-harbor-73222.herokuapp.com/warehouseproducts`,{
+        fetch(`https://lit-harbor-73222.herokuapp.com/warehouseproducts`,{
             method:'POST',
             headers:{
                 'content-type':'application/json'
