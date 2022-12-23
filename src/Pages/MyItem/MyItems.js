@@ -13,7 +13,7 @@ const MyItems = () => {
     const handleDelete = id => {
         const confirm = window.confirm('Are you sure to delete this product ?')
         if (confirm) {
-            fetch(`https://lit-harbor-73222.herokuapp.com/warehouseproducts/${id}`, {
+            fetch(`https://unique-shop-server-production.up.railway.app/${id}`, {
                 method: "DELETE"
             }).then(res => res.json()).then(result => {
                 const remaining = products.filter(product => product._id !== id)
