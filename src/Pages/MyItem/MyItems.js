@@ -4,6 +4,8 @@ import auth from '../../firebase.init';
 import MyItem from './MyItem';
 import '../Home/HomePageItems/HomeProducts.css'
 import Loading from '../Shared/Loading/Loading';
+import Footer from '../Shared/Footer/Footer';
+import Header from '../Shared/Header/Header';
 
 const MyItems = () => {
     const [user] = useAuthState(auth)
@@ -13,7 +15,7 @@ const MyItems = () => {
     const handleDelete = id => {
         const confirm = window.confirm('Are you sure to delete this product ?')
         if (confirm) {
-            fetch(`https://unique-shop-server-production.up.railway.app/${id}`, {
+            fetch(`https://unique-shop-server-production.up.railway.app/warehouseproducts/${id}`, {
                 method: "DELETE"
             }).then(res => res.json()).then(result => {
                 const remaining = products.filter(product => product._id !== id)
@@ -24,7 +26,7 @@ const MyItems = () => {
     }
     useEffect(() => {
         setLoading(true)
-        fetch(`https://lit-harbor-73222.herokuapp.com/addedproducts?email=${email}`).then(res => res.json()).then(data => {
+        fetch(`https://unique-shop-server-production.up.railway.app/addedproducts?email=${email}`).then(res => res.json()).then(data => {
             setProducts(data)
             setLoading(false)
         })
@@ -34,15 +36,19 @@ const MyItems = () => {
         return <Loading />
     }
     return (
-        <div className='home-products' style={{ marginTop: '90px' }}>
-            {
-                products.length !== 0 ?
-                    products.map(product => <MyItem product={product} handleDelete={handleDelete} key={product._id} />) :
-                    <div>
-                        <h1 style={{ color: '#4c3aba', marginBottom: '12.2em' }}> You don't add any item to warehouse yet ...</h1>
-                    </div>
-            }
-        </div>
+        <>
+            <Header />
+            <div className='home-products' >
+                {
+                    products.length !== 0 ?
+                        products.map(product => <MyItem product={product} handleDelete={handleDelete} key={product._id} />) :
+                        <div>
+                            <h1 style={{ color: '#4c3aba', marginBottom: '12.2em' }}> You don't add any item to warehouse yet ...</h1>
+                        </div>
+                }
+            </div>
+            <Footer />
+        </>
     );
 };
 

@@ -1,6 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import Blogs from './Pages/Blogs/Blogs';
 import Home from './Pages/Home/Home'
 import Inventorys from './Pages/Inventory/Inventorys';
 import ItemDetails from './Pages/InventoryItemDetails/ItemDetails';
@@ -18,34 +17,33 @@ import HomePageItems from './Pages/Home/HomePageItems/HomePageItems';
 function App() {
   return (
     <>
-      <Header/>
+      {/* <Header /> */}
       <Routes>
-        <Route path='/' element={<Home/>}/>
-        <Route path='/home' element={<Home/>}/>
-        <Route path='/home/#dashboard' element={<Dashboard/>}/>
-        <Route path='/home/#sampleproducts' element={<HomePageItems/>}/>
-        <Route path='/manageinventories' element={<Inventorys/>}/>
+        <Route path='/' element={<Home />} />
+        <Route path='/home' element={<Home />} />
+        <Route path='/home/#dashboard' element={<Dashboard />} />
+        <Route path='/home/#sampleproducts' element={<HomePageItems />} />
+        <Route path='/manageinventories' element={<Inventorys />} />
         <Route path='/inventory/:itemId' element={
           <PrivateRoute>
-            <ItemDetails/>
-           </PrivateRoute>
-        }/>
+            <ItemDetails />
+          </PrivateRoute>
+        } />
         <Route path='/additem' element={
           <PrivateRoute>
-            <AddItem/>
+            <AddItem />
           </PrivateRoute>
-        }/>
+        } />
         <Route path='/myitem' element={
           <PrivateRoute>
-            <MyItems/>
+            <MyItems />
           </PrivateRoute>
-        }/>
-        <Route path='/blogs' element={<Blogs/>}/>
-        <Route path='/login' element={<Login/>}/>
-        <Route path='/register' element={<Register/>}/>
-        <Route  path='*' element = {<Error/>}/>
+        } />
+        <Route path='/login' element={<Login />} />
+        <Route path='/register' element={<Register />} />
+        <Route path='*' element={<Error />} />
       </Routes>
-      <Footer/>
+      {/* <Footer /> */}
     </>
   );
 }

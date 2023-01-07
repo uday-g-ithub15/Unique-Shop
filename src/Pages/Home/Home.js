@@ -4,15 +4,21 @@ import Dashboard from './Dashboard/Dashboard';
 import HomePageItems from './HomePageItems/HomePageItems';
 import Provider from './Provider/Provider';
 import './Home.css'
+import Header from '../Shared/Header/Header';
+import Footer from '../Shared/Footer/Footer';
 
 const Home = () => {
     return (
-        <div className='homeStyle'>
-          <Banner/>  
-         <HomePageItems/>
-         <Dashboard/>
-         <Provider/>
-        </div>
+        <>
+            <Header />
+            <div className='homeStyle'>
+                <Banner />
+                <HomePageItems homeScreen={true} />
+                <Dashboard homeScreen={true} />
+                <Provider homeScreen={true} />
+            </div>
+            <Footer />
+        </>
     );
 };
 
