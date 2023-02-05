@@ -15,18 +15,17 @@ const MyItems = () => {
     const handleDelete = id => {
         const confirm = window.confirm('Are you sure to delete this product ?')
         if (confirm) {
-            fetch(`https://unique-shop-server-production.up.railway.app/warehouseproducts/${id}`, {
+            fetch(`https://unique-shop-server.vercel.app/warehouseproducts/${id}`, {
                 method: "DELETE"
             }).then(res => res.json()).then(result => {
                 const remaining = products.filter(product => product._id !== id)
                 setProducts(remaining)
-                console.log(result);
             })
         }
     }
     useEffect(() => {
         setLoading(true)
-        fetch(`https://unique-shop-server-production.up.railway.app/addedproducts?email=${email}`).then(res => res.json()).then(data => {
+        fetch(`https://unique-shop-server.vercel.app/addedproducts?email=${email}`).then(res => res.json()).then(data => {
             setProducts(data)
             setLoading(false)
         })

@@ -31,7 +31,8 @@ const Header = () => {
   const logout = () => {
     signOut(auth);
   };
-
+  // background: #e0ffff;
+  // color: #0808a9;
   return (
     <header>
       <div className="res-icon">
@@ -54,7 +55,7 @@ const Header = () => {
         <div className="user">
           {
             user ? <>
-              <h4><button onClick={() => navigate('/additem')} style={{ marginRight: '10px' }}><AiOutlinePlus /> Add Item</button></h4>
+              <h4><Button variant='contained' onClick={() => navigate('/additem')} startIcon={<AiOutlinePlus />}> Add Item</Button></h4>
               <h4><NavLink to={'/manageinventories'}>Inventorys</NavLink></h4>
               <h4><NavLink to={'/myitem'}>My Item</NavLink></h4>
               <div className="user-details">
