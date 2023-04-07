@@ -6,7 +6,7 @@ import Loading from '../../Shared/Loading/Loading';
 import HomePageItem from './HomePageItem';
 import './HomeProducts.css'
 const HomePageItems = ({ homeScreen }) => {
-    const { products, loading } = useProducts(`https://unique-shop-server.vercel.app/warehouseproducts`);
+    const { products, loading } = useProducts(`https://unique-shop-server.onrender.com/warehouseproducts`);
     const homeInventory = products.slice(0, 6)
     if (loading) {
         return <Loading />

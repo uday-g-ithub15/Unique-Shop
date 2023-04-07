@@ -6,11 +6,11 @@ import Footer from '../Shared/Footer/Footer';
 import Header from '../Shared/Header/Header';
 
 const Inventorys = () => {
-    const { products, setProducts, loading } = useProducts(`https://unique-shop-server.vercel.app/warehouseproducts`)
+    const { products, setProducts, loading } = useProducts(`https://unique-shop-server.onrender.com/warehouseproducts`)
     const handleDelete = id => {
         const confirm = window.confirm('Are you sure to delete this product ?')
         if (confirm) {
-            fetch(`https://unique-shop-server.vercel.app/warehouseproducts/${id}`, {
+            fetch(`https://unique-shop-server.onrender.com/warehouseproducts/${id}`, {
                 method: "DELETE"
             }).then(res => res.json()).then(result => {
                 const remaining = products.filter(product => product._id !== id)

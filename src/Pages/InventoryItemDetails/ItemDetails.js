@@ -30,7 +30,7 @@ const ItemDetails = () => {
 
     useEffect(() => {
         const loadProduct = async () => {
-            const url = `https://unique-shop-server.vercel.app/warehouseproducts/${itemId}`
+            const url = `https://unique-shop-server.onrender.com/warehouseproducts/${itemId}`
             const res = await fetch(url)
             const data = await res.json();
             setProduct(data)
@@ -66,7 +66,7 @@ const ItemDetails = () => {
     const handleUpdateQuantity = async ({ updatingQuantity }) => {
         setSnackBar(true)
         if (updatingQuantity) {
-            const response = await fetch(`https://unique-shop-server.vercel.app/warehouseproducts/${itemId}`, {
+            const response = await fetch(`https://unique-shop-server.onrender.com/warehouseproducts/${itemId}`, {
                 method: "PUT",
                 headers: {
                     'content-type': 'application/json'
@@ -86,7 +86,7 @@ const ItemDetails = () => {
         else {
             setNewQuantity(newQuantity - 1)
             setNewSold(newSold + 1)
-            const response = await fetch(`https://unique-shop-server.vercel.app/warehouseproducts/${itemId}`, {
+            const response = await fetch(`https://unique-shop-server.onrender.com/warehouseproducts/${itemId}`, {
                 method: "PUT",
                 headers: {
                     'content-type': 'application/json'
