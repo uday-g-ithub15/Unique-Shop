@@ -1,6 +1,6 @@
 [
   {
-    "_id": "6276852b9b7e7d1e28a8afb8",
+    
     "productName": "Apple iPad Air 5th Gen 10.9-Inch",
     "quantity": 17,
     "price": 1464,
@@ -11,7 +11,7 @@
     "sold": 5
   },
   {
-    "_id": "6276852b9b7e7d1e28a8afba",
+    
     "productName": "Sony Bravia KDL-32W600d 32-Inch Tv",
     "quantity": 9,
     "price": 907,
@@ -22,7 +22,7 @@
     "sold": 10
   },
   {
-    "_id": "6276852b9b7e7d1e28a8afb5",
+    
     "productName": "Canon EOS 850D 24.1 MP",
     "quantity": 5,
     "price": 669,
@@ -33,7 +33,7 @@
     "sold": 6
   },
   {
-    "_id": "6276852b9b7e7d1e28a8afb9",
+    
     "productName": "HP 14s-dq4458TU Core i5 11th Gen 14-Inch FHD Laptop",
     "quantity": 5,
     "price": 1098.71,
@@ -44,7 +44,7 @@
     "sold": 7
   },
   {
-    "_id": "6276852b9b7e7d1e28a8afb7",
+    
     "productName": "Apple Watch SE A2351",
     "quantity": 3,
     "price": 995,
@@ -55,7 +55,7 @@
     "sold": 12
   },
   {
-    "_id": "6276852b9b7e7d1e28a8afb6",
+    
     "productName": "Apple Studio Display 27 Inch 5K Monitor",
     "quantity": 2,
     "price": 1999.00,
@@ -66,7 +66,7 @@
     "sold": 4
   },
   {
-    "_id": "6276852b9b7e7d1e28a8afbb",
+    
     "productName": "Intel 11th Gen Core i7-11700 Special Gaming PC",
     "quantity": 6,
     "price": 1181.57,

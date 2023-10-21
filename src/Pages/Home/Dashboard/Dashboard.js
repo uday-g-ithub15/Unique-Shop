@@ -5,7 +5,7 @@ import Header from '../../Shared/Header/Header';
 import './Dashboard.css'
 
 const Dashboard = ({ homeScreen }) => {
-    const { products } = useProducts(`https://unique-shop-server.onrender.com/warehouseproducts`)
+    const { products } = useProducts(`http://localhost:5000/warehouseproducts`)
     let sum = 0;
     let totalSoldPrice = 1;
     for (const product of products) {

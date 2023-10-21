@@ -23,7 +23,7 @@ const AddItem = () => {
         const desc = e.target.desc.value;
         const sold = 1;
         const product = { userName, email, productName, productColor, price, quantity, picture, supplierName, desc, sold }
-        fetch(`https://unique-shop-server.onrender.com/warehouseproducts`, {
+        fetch(`http://localhost:5000/warehouseproducts`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
