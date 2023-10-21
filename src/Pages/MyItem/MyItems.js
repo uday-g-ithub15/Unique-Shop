@@ -15,7 +15,7 @@ const MyItems = () => {
     const handleDelete = id => {
         const confirm = window.confirm('Are you sure to delete this product ?')
         if (confirm) {
-            fetch(`http://localhost:5000/warehouseproducts/${id}`, {
+            fetch(`https://unique-shop-server.onrender.com/warehouseproducts/${id}`, {
                 method: "DELETE"
             }).then(res => res.json()).then(result => {
                 const remaining = products.filter(product => product._id !== id)
@@ -25,7 +25,7 @@ const MyItems = () => {
     }
     useEffect(() => {
         setLoading(true)
-        fetch(`http://localhost:5000/addedproducts?email=${email}`).then(res => res.json()).then(data => {
+        fetch(`https://unique-shop-server.onrender.com/addedproducts?email=${email}`).then(res => res.json()).then(data => {
             setProducts(data)
             setLoading(false)
         })

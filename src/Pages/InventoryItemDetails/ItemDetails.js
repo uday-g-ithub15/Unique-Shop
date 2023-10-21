@@ -30,8 +30,8 @@ const ItemDetails = () => {
 
     useEffect(() => {
         const loadProduct = async () => {
-            // const url = `http://localhost:5000/warehouseproducts/${itemId}`
-            const url = `http://localhost:5000/warehouseproducts/${itemId}`
+            // const url = `https://unique-shop-server.onrender.com/warehouseproducts/${itemId}`
+            const url = `https://unique-shop-server.onrender.com/warehouseproducts/${itemId}`
 
             const res = await fetch(url)
             const data = await res.json();
@@ -69,7 +69,7 @@ const ItemDetails = () => {
     const handleUpdateQuantity = async ({ updatingQuantity }) => {
         setSnackBar(true)
         if (updatingQuantity) {
-            const response = await fetch(`http://localhost:5000/warehouseproducts/${itemId}`, {
+            const response = await fetch(`https://unique-shop-server.onrender.com/warehouseproducts/${itemId}`, {
                 method: "PUT",
                 headers: {
                     'content-type': 'application/json'
@@ -89,7 +89,7 @@ const ItemDetails = () => {
         else {
             setNewQuantity(newQuantity - 1)
             setNewSold(newSold + 1)
-            const response = await fetch(`http://localhost:5000/warehouseproducts/${itemId}`, {
+            const response = await fetch(`https://unique-shop-server.onrender.com/warehouseproducts/${itemId}`, {
                 method: "PUT",
                 headers: {
                     'content-type': 'application/json'
