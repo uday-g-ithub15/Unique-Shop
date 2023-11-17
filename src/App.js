@@ -11,34 +11,38 @@ import PrivateRoute from './Pages/Shared/PrivateRoute/PrivateRoute';
 import AddItem from './Pages/AddItem/AddItem';
 import Dashboard from './Pages/Home/Dashboard/Dashboard';
 import HomePageItems from './Pages/Home/HomePageItems/HomePageItems';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
   return (
-    <Routes>
-      <Route path='/' element={<Home />} />
-      <Route path='/home' element={<Home />} />
-      <Route path='/home/#dashboard' element={<Dashboard />} />
-      <Route path='/home/#sampleproducts' element={<HomePageItems />} />
-      <Route path='/manageinventories' element={<Inventorys />} />
-      <Route path='/inventory/:itemId' element={
-        <PrivateRoute>
-          <ItemDetails />
-        </PrivateRoute>
-      } />
-      <Route path='/additem' element={
-        <PrivateRoute>
-          <AddItem />
-        </PrivateRoute>
-      } />
-      <Route path='/myitem' element={
-        <PrivateRoute>
-          <MyItems />
-        </PrivateRoute>
-      } />
-      <Route path='/login' element={<Login />} />
-      <Route path='/register' element={<Register />} />
-      <Route path='*' element={<Error />} />
-    </Routes>
+    <>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/home' element={<Home />} />
+        <Route path='/home/#dashboard' element={<Dashboard />} />
+        <Route path='/home/#sampleproducts' element={<HomePageItems />} />
+        <Route path='/manageinventories' element={<Inventorys />} />
+        <Route path='/inventory/:itemId' element={
+          <PrivateRoute>
+            <ItemDetails />
+          </PrivateRoute>
+        } />
+        <Route path='/additem' element={
+          <PrivateRoute>
+            <AddItem />
+          </PrivateRoute>
+        } />
+        <Route path='/myitem' element={
+          <PrivateRoute>
+            <MyItems />
+          </PrivateRoute>
+        } />
+        <Route path='/login' element={<Login />} />
+        <Route path='/register' element={<Register />} />
+        <Route path='*' element={<Error />} />
+      </Routes>
+      <ToastContainer />
+    </>
   );
 }
 

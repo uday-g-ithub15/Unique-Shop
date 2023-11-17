@@ -62,7 +62,7 @@ const Header = () => {
                 <div className='user-img'>
                   <img src={user?.photoURL || unset} alt="Profile" onClick={() => setUserShow(!userShow)} />
                   <div className={`user-info ${userShow ? 'show' : 'hide'}`}>
-                    <h4 style={{ marginBottom: '10px' }}>{user.displayName}</h4>
+                    <h4 style={{ marginBottom: '10px', color: '#2C6AE5' }}>{user?.displayName || "USER"}</h4>
                     <h3><Button variant='contained' onClick={logout}>Logout</Button></h3>
                   </div>
                 </div>

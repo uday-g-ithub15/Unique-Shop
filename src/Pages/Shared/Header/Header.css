@@ -58,7 +58,7 @@ nav .user .user-details .user-img img{
 }
 nav .user .user-details .user-info{
     position: absolute;
-    background: darkblue;
+    background: #efe6e6;
     color: white;
     border-radius:5px ;
     left: -30px;

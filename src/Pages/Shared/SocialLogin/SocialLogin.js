@@ -1,18 +1,28 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './SocialLogin.css'
-import { FcGoogle } from 'react-icons/fc'
-import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
-import Loading from '../Loading/Loading';
-import auth from '../../../firebase.init';
+import { FaGoogle } from "react-icons/fa";
 import { Box, Button } from '@mui/material';
+import { Context } from '../../../contexts/UrlContext';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 const SocialLogin = () => {
-    const [signInWithGoogle, user, loading] = useSignInWithGoogle(auth);
-    if (loading) {
-        return <Loading />
+    const { googleSignIn } = useContext(Context);
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
+    const handleGoogleSignIn = async () => {
+        const { message, success } = await googleSignIn();
+        if (success) {
+            navigate(from, { replace: true })
+            toast.success(message)
+        }
+        else {
+            toast.error(message)
+        }
     }
     return (
         <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-            <Button onClick={() => { signInWithGoogle() }} variant='contained' startIcon={<FcGoogle />}>Log in with Google </Button>
+            <Button onClick={handleGoogleSignIn} variant='contained' startIcon={<FaGoogle />}>Log in with Google </Button>
         </Box>
     );
 };
