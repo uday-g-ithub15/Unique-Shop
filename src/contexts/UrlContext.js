@@ -6,8 +6,8 @@ import { } from "firebase/auth";
 export const Context = createContext()
 
 const UrlContext = ({ children }) => {
-    // const url = 'https://unique-shop-server.onrender.com'
-    const url = 'http://localhost:5000'
+    const url = 'https://unique-shop-server.onrender.com'
+    // const url = 'http://localhost:5000'
     //********** Create account
     const createAccountWithEmail = async (email, password, name, mobile) => {
         try {
